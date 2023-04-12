@@ -1,0 +1,25 @@
+{
+  "name": "old-river-guitar-18",
+  "version": "1.0.0",
+  "description": "<a href=\"https://choosealicense.com/licenses/mit\">\r   <img src=\"https://img.shields.io/badge/License-MIT-blue\" />\r   </a>",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheKelsenator/old-river-guitar-18.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheKelsenator/old-river-guitar-18/issues"
+  },
+  "homepage": "https://github.com/TheKelsenator/old-river-guitar-18#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  }
+}
