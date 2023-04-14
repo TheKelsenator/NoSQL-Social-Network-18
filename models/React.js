@@ -1,5 +1,8 @@
 const { Schema, Types } = require('mongoose');
+const router = express.Router();
 // Do I need to require mongoose ObjectID?
+
+// Is this file giving the correct information?
 
 const reactionSchema = new Schema(
   {
