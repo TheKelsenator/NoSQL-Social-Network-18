@@ -14,7 +14,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: /.+\@.+\../, // <- Need to make a different match pattern
+      match: /.+\@.+\../, // <- What is this?
     },
     thoughts: { 
       type: Schema.Types.Array, 
@@ -32,7 +32,9 @@ const userSchema = new Schema(
     id: false,
   }
 );
+
 // Creates a virtual allowing us to track the amount of friends a user has
+// But is it right?
 userSchema.virtual('friendCount').get(function () {
   return this.friends.length;
 });
