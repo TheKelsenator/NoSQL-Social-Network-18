@@ -2,20 +2,15 @@ const express = require('express');
 const router = express.Router();
 const thoughtController = require('../../controllers/thought');
 
-// Route to create a new thought
-router.post('/', );
+router.post('/', thoughtController.createThought);
 
-// Route to get all thoughts
-router.get('/, ');
+router.get('/', thoughtController.getThoughts);
 
-// Route to get a single thought by id
-router.get('/:id', );
+router.get('/:id', thoughtController.getThoughtId);
 
-// Route to update a thought by id
-router.put('/:id', );
+router.put('/:id', thoughtController.updateThought);
 
-// Route to delete a thought by id
-router.delete('/:id', );
+router.delete('/:id', thoughtController.deleteThought);
 
 
 module.exports = router;

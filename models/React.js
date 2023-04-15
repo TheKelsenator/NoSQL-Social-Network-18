@@ -1,16 +1,13 @@
 const { Schema, Types } = require('mongoose');
-const router = express.Router();
 // Do I need to require mongoose ObjectID?
 
-// Is this file giving the correct information?
-
-const reactionSchema = new Schema(
+const reactSchema = new Schema(
   {
-    reactionId: {
+    reactId: {
       type: Schema.Types.ObjectId, // Is this right?
       default: () => new Types.ObjectId(),
     },
-    reactionBody: { 
+    reactBody: { 
       type: String, 
       required: true, 
       maxLength: 280, 
@@ -23,7 +20,7 @@ const reactionSchema = new Schema(
     createdAt: { 
       type: Date, 
       default: Date.now, 
-      get: formatDate, 
+      get: currentDate, 
     },
   },
   {
@@ -34,8 +31,7 @@ const reactionSchema = new Schema(
   }
 );
 
-// Code I pulled from the internet and I don't know what it does!!
-function formatDate(createdAt) {
+function currentDate(createdAt) {
   return (createdAt = new Date().toLocaleDateString());
 }
 
@@ -49,4 +45,4 @@ function formatDate(createdAt) {
 //  return this.reactions.length;
 // });
 
-module.exports = reactionSchema;
+module.exports = reactSchema;
