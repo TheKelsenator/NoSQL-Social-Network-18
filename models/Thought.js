@@ -1,6 +1,7 @@
-const { Schema, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
+const reactSchema = require('./React');
 
-const reactionSchema = new Schema(
+const thoughtSchema = new Schema(
   {
     thoughtText: { 
       type: String, 
@@ -11,31 +12,28 @@ const reactionSchema = new Schema(
     createdAt: { 
       type: Date, 
       default: Date.now, 
-      get: formatDate,
+      get: currentDate,
     },
     username: { 
       type: String, 
       required: true,
     },
-    reactions: [{ 
-      // These are like replies:
-      // Array of nested documents created 
-      // with the reactionSchema
-
-      // Like this?: 
-
-      // reactionBody: {
-      //   type: String,
-      //   required: true
-      // },
-      // username: {
-      //   type: String,
-      //   required: true
-      // },
-      // createdAt: {
-      //   type: Date,
-      //   default: Date.now
-      // }
+    react: [{ 
+      reactBody: { 
+        type: String, 
+        required: true, 
+        maxLength: 280, 
+        minLength: 1,
+      },
+      username: { 
+        type: String, 
+        required: true,
+      },
+      createdAt: { 
+        type: Date, 
+        default: Date.now, 
+        get: currentDate, 
+      },
     }],
   },
   {
@@ -46,13 +44,13 @@ const reactionSchema = new Schema(
   }
 );
 
-// Code I pulled from the internet and I don't know what it means!!
-function formatDate(createdAt) {
+function currentDate(createdAt) {
   return (createdAt = new Date().toLocaleDateString());
 }
 
 // TODO: Create a virtual called reactionCount that retrieves 
 // the length of the thought's reactions array field on query.
 
+const Thought = model('thought', thoughtSchema);
 
-module.exports = reactionSchema;
+module.exports = Thought;

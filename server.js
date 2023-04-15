@@ -13,16 +13,11 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-// TODO: Add middleware?
-
-// Add an app.get?
-
 db.once('open', () => {
   app.listen(PORT, () => {
-    console.log(`Now Listening! ${PORT}`);
+    console.log(`Now Listening! localhost:${PORT}`);
   });
 });

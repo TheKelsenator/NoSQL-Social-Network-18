@@ -33,8 +33,6 @@ const userSchema = new Schema(
   }
 );
 
-// Creates a virtual allowing us to track the amount of friends a user has
-// But is it right?
 userSchema.virtual('friendCount').get(function () {
   return this.friends.length;
 });
