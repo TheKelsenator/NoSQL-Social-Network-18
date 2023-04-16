@@ -1,4 +1,4 @@
-const { Thought } = require('../models');
+const { User, Thought } = require('../models');
 
 const thoughtController = {
   createThought(req, res) {
@@ -9,10 +9,10 @@ const thoughtController = {
   getThoughts(req, res) {
     Thought.find({})
         .then(async (thoughts) => {
-        const thoughtsObj = {
+        const thoughtData = {
           thoughts,
         };
-        return res.json(thoughtsObj);
+        return res.json(thoughtData);
       })
       .catch((err) => {
         console.log(err);
@@ -20,7 +20,7 @@ const thoughtController = {
       });
   },
   getThoughtId(req, res) {
-    Thought.findOne({_id: req.params.thoughtId})
+    Thought.findById({_id: req.params.id})
         .select('-__v')
         .then(async (thought) =>
             !thought
@@ -30,8 +30,8 @@ const thoughtController = {
           .catch((err) => {console.log(err);res.status(500).json(err)});
   },
   updateThought(req, res) {
-    Thought.updateOne(
-      {_id: req.params.thoughtId},
+    Thought.findOneAndUpdate(
+      {_id: req.params.id},
       {$set: req.body},
       {runValidators: true, new: true}
     )
@@ -43,11 +43,11 @@ const thoughtController = {
     .catch((err) => res.status(500).json(err));
   },
   deleteThought(req, res) {
-    Thought.deleteOne({ _id: req.params.thoughtId})
+    Thought.findOneAndDelete({ _id: req.params.id})
     .then((thought) =>
       !thought
       ? res.status(404).json({message: 'Could not find!'})
-      : Thought.deleteMany({ _id: {$in: user.thoughts}})
+      : Thought.deleteMany({ _id: { $in: User.thought } })
     )
     .then(() => res.json({ message: 'Thought has been deleted'}))
     .catch((err) => res.status(500).json(err));

@@ -1,13 +1,10 @@
 const { Schema, model } = require('mongoose');
-const reactSchema = require('./React');
 
 const thoughtSchema = new Schema(
   {
     thoughtText: { 
-      type: String, 
+      type: String,
       required: true, 
-      maxLength: 280,
-      minLength: 1,
     },
     createdAt: { 
       type: Date, 
@@ -21,13 +18,13 @@ const thoughtSchema = new Schema(
     react: [{ 
       reactBody: { 
         type: String, 
-        required: true, 
+        required: false, 
         maxLength: 280, 
         minLength: 1,
       },
       username: { 
         type: String, 
-        required: true,
+        required: false,
       },
       createdAt: { 
         type: Date, 
@@ -40,7 +37,7 @@ const thoughtSchema = new Schema(
     toJSON: {
       getters: true,
     },
-    _id: false,
+    _id: true,
   }
 );
 

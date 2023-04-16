@@ -15,7 +15,7 @@ const userController = {
       .catch((err) => res.status(500).json(err));
   },
   getUserId(req, res) {
-    User.findOne({ _id: req.params.userId })
+    User.findById({ _id: req.params.id })
       .populate('thoughts')
       .populate('friends')
       .select('-__v')
@@ -28,7 +28,7 @@ const userController = {
   },
   updateUser(req, res) {
     User.findOneAndUpdate(
-      { _id: req.params.userId },
+      { _id: req.params.id },
       { $set: req.body },
       { runValidators: true, new: true }
     )
@@ -40,11 +40,11 @@ const userController = {
       .catch((err) => res.status(500).json(err));
   },
   deleteUser(req, res) {
-    User.findOneAndDelete({ _id: req.params.userId })
+    User.findOneAndDelete({ _id: req.params.id })
       .then((user) =>
         !user
           ? res.status(404).json({ message: 'Could not find!' })
-          : Thought.deleteMany({ _id: { $in: user.thoughts } })
+          : Thought.deleteMany({ _id: { $in: User.thought } })
       )
       .then(() => res.status(200).json({ message: 'User has been deleted'}))
       .catch((err) => res.status(500).json(err));

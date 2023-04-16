@@ -40,9 +40,5 @@ function currentDate(createdAt) {
 // This will not be a model, but rather will be used as the 
 // reaction field's subdocument schema in the Thought model.
 
-// Example from my Thought model
-// reactionSchema.virtual('reactionCount').get(function () {
-//  return this.reactions.length;
-// });
 
 module.exports = reactSchema;
