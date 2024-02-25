@@ -1,9 +1,5 @@
 # Weekly Challenge: Eighteen -
 
-  <a href="https://choosealicense.com/licenses/mit">
-  <img src="https://img.shields.io/badge/License-MIT-blue" />
-  </a>
-
 ## NoSQL Challenge: Social Network API
 
   University of Utah
@@ -12,18 +8,17 @@
   -Fall 2022 - Spring 2023
 
 ## Description
-
-  Your challenge is to build an API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. 
+    
+  The Social Network API is a robust backend solution designed specifically for social media startups, offering seamless integration with a NoSQL database for efficient management of large volumes of unstructured data. With MongoDB as its foundation and Mongoose for modeling, this API ensures scalability and reliability. Users can effortlessly interact with the API through various HTTP requests, enabling CRUD operations on users, thoughts, reactions, and friend lists. Whether it's retrieving user information, managing thoughts and reactions, or maintaining friend connections, the Social Network API provides a comprehensive set of functionalities to support the dynamic needs of a growing social network platform.
 
 ## Table of Contents
 
-- [User Story](#user)
-- [Acceptance Criteria](#acceptance)
-- [License](#license)
-- [Links](#links)
-- [Contribution](#contribution)
-- [Screenshots](#screenshots)
-- [Contact Me](#contact)
+  - [User Story](#user-story)
+  - [Acceptance Criteria](#acceptance-criteria)
+  - [License](#license)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+  - [Contact Me](#contact-me)
 
 ## User Story
 
@@ -47,22 +42,21 @@
 
   This project is licensed under the terms of the MIT license.
   [License Information](https://choosealicense.com/licenses/mit)
+  <br/>
+  <br/>
+  <a href="https://choosealicense.com/licenses/mit">
+  <img src="https://img.shields.io/badge/License-MIT-blue" />
+  </a>
 
-
-## Links
-
-  https://drive.google.com/file/d/17TOhvVIqbse5Cs9mcFFKa30kaGz2Qw5m/view?usp=sharing
-
-  https://github.com/TheKelsenator/old-river-guitar-18
-
-## Contribution
-
-  Github [TheKelsenator](https://github.com/TheKelsenator)
-
-## Screenshots
+## Screenshot
 
  ![alt](./images/Screenshot%20(62).png)
 
+## Links
+
+  * Application Video Link: https://drive.google.com/file/d/17TOhvVIqbse5Cs9mcFFKa30kaGz2Qw5m/view?usp=sharing
+  * LinkedIn Profile: https://www.linkedin.com/in/kelsey-o-kelley-23057a20b/
+
 ## Contact Me
 
-  Email [km.okelley89@gmail.com](mailto:km.okelley89@gmail.com)
+  Feel free to reach out to me via email at km.okelley89@gmail.com or through my LinkedIn.
